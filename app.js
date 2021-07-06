@@ -31,7 +31,7 @@ var controllers = require(__dirname + "/apps/controllers");
 
 app.use(controllers);
 
-var port = config.get("server.port") || process.env.PORT;
+var port = process.env.PORT || config.get("server.port");
 app.listen(port, "0.0.0.0", function() {
     console.log(`Server listening on port ${port}`);
 });
