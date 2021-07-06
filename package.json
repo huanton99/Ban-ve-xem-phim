@@ -172,7 +172,7 @@
         "start": "node app.js"
     },
     "engines": {
-        "node": "14.16.0",
+        "node": "v14.16.0",
         "npm": "7.15.0"
     },
     "keywords": [
@@ -180,5 +180,5 @@
         "heroku"
     ],
     "author": "",
-    "license": "MIT"
+    "license": "ISC"
 }
