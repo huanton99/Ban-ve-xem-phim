@@ -15,13 +15,21 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
     extended: true,
 }));
-app.use(session({
+
+var sess = {
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-}));
+    cookie: {}
+}
 
-//check login
+if (app.get('env') === 'production') {
+    app.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess))
+    //check login
 app.use(auth);
 
 //static folder
